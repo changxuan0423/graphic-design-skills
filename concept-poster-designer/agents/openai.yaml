@@ -1,0 +1,6 @@
+interface:
+  display_name: "Concept Poster Designer"
+  short_description: "把文字语义转成高级概念海报提示词"
+  default_prompt: "Use $concept-poster-designer to create a minimalist conceptual poster from my word or phrase."
+policy:
+  allow_implicit_invocation: true
