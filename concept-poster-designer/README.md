@@ -1,80 +1,46 @@
 # Concept Poster Designer
 
-`concept-poster-designer` is a Codex skill for creating high-concept minimalist graphic posters, banners, key visuals, promotional images, and typography-led design prompts from a single character, word, phrase, short sentence, or letter group.
+`concept-poster-designer` turns the meaning of a character, word, phrase, short sentence, or letter group into a high-concept minimalist graphic poster: semantic analysis → one precise visual metaphor → an image-generation prompt adapted to the target model (GPT-image / Gemini / Midjourney / SD-Flux).
 
-It turns text meaning into a visual metaphor instead of producing a generic illustration or a decorative word poster.
+It is a *method*, not just a style guide: a mandatory diverge-then-kill step bans first-association clichés (孤独≠空椅子, freedom≠flying bird), a feasibility tier keeps image-text interactions within what image models can actually render (especially CJK titles), and style branches by context (exhibition print / Swiss tech / photographic) instead of forcing one aesthetic.
 
-## What It Does
-
-- Analyzes the literal meaning, emotional tone, cultural associations, and hidden tension of the input text.
-- Chooses one focused visual metaphor for the word or phrase.
-- Builds a poster concept around strong typography, minimal composition, and semantic image-text interaction.
-- Produces structured creative output:
-  - semantic analysis
-  - poster concept
-  - image-generation prompt
-  - negative prompt
-  - optional auxiliary copy
+Not for e-commerce promos, sale banners, or information-dense marketing layouts.
 
 ## Installation
 
-Copy the folder into your Codex skills directory:
-
 ```bash
+# Codex
 cp -R concept-poster-designer ~/.codex/skills/
+
+# Claude Code
+cp -R concept-poster-designer ~/.claude/skills/
 ```
 
-Restart Codex or start a new thread so the skill metadata can be discovered.
+Restart or start a new session so the skill metadata is discovered. The skill can also trigger implicitly on matching requests (e.g. "把'自由'做成一张概念海报").
 
 ## Usage
 
-Invoke the skill explicitly:
-
 ```text
 Use $concept-poster-designer
-核心文字/单词/词组/字母: 孤独
-文字语言: 中文
-可选补充语境: 艺术展海报
-可选情绪倾向: 冷峻、克制、疏离
-可选禁用元素: 眼泪、拥抱、心形
+核心文字: 孤独
+语境: 艺术展海报
+气质说明: 冷峻、克制、疏离
+禁用: 眼泪、拥抱、心形
+目标生成模型: GPT-image
 ```
 
-For a GitHub banner:
+Only the core text is required — everything else is inferred. The full input contract, workflow, and output shape live in [SKILL.md](SKILL.md); two complete worked examples (孤独 exhibition poster, EverOS wide tech banner) live in [references/worked-examples.md](references/worked-examples.md).
 
-```text
-Use $concept-poster-designer
-核心文字/单词/词组/字母: EverOS
-文字语言: 英文
-可选补充语境: GitHub README banner
-可选情绪倾向: 现代主义、极简设计、科技感、黄色品牌强调色
-```
+## Credits
 
-## Input Fields
-
-```text
-核心文字/单词/词组/字母:
-文字语言:
-可选补充语境:
-可选情绪倾向:
-可选禁用元素:
-可选尺寸/比例:
-可选品牌/场景:
-```
-
-Only the core text is required. Other fields can be inferred when omitted.
+方法论源自 X [@xiaoxiaodong01](https://x.com/xiaoxiaodong01) 的提示词框架，经小红书 @阿元《使用GPT Image2制作高级感海报的思路整理》整理扩展，本 skill 在其基础上加入反俗套发散机制、可行性分层与按模型出稿。
 
 ## Files
 
 ```text
 concept-poster-designer/
-├── SKILL.md
+├── SKILL.md                      # the full method
 ├── README.md
-├── agents/
-│   └── openai.yaml
-└── references/
-    └── concept-poster-sop.md
+├── agents/openai.yaml            # Codex interface metadata
+└── references/worked-examples.md # calibration examples (loaded on demand)
 ```
-
-## Design Principle
-
-The poster should make the viewer feel why the word is expressed this way. Text is the theme, image deepens the text, and both form one complete visual sentence.
