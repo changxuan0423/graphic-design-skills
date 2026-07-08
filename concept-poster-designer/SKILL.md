@@ -12,16 +12,20 @@ Produce one poster concept built on one precise visual metaphor, then encode it 
 Fields (only the core text is required; infer the rest):
 
 ```text
-核心文字 / Core text:
-文字语言 / Language:
-目标生成模型 / Target image model:   (GPT-image / Gemini / Midjourney / SD-Flux / unknown)
-补充语境 / Context & usage:
-气质说明 / Vibe line:                (one colloquial sentence describing the desired feel — see Step 4)
-禁用元素 / Forbidden elements:
-是否允许辅助文字 / Allow auxiliary text:  (yes/no; if yes, state how it must relate to the theme)
-尺寸比例 / Aspect ratio:
-品牌场景 / Brand constraints:
+## 用户输入内容:
+核心文字 / 单词 / 词组 / 字母:
+文字语言:
+可选补充语境:
+可选情绪倾向:
+可选禁用元素:
+是否允许辅助文字:
+辅助文字如允许，必须与主题的关系说明:
+可选尺寸/比例:
+可选目标生成模型:
+可选品牌/场景:
 ```
+
+Field notes: 可选情绪倾向 carries the colloquial vibe line that drives style (see Step 4). 是否允许辅助文字 is yes/no; when yes, the relation line explains what the auxiliary copy must say about the theme. 可选目标生成模型 is GPT-image / Gemini / Midjourney / SD-Flux — treat as GPT-image when empty.
 
 Route special inputs before analyzing:
 
@@ -70,9 +74,9 @@ Decide the spatial arrangement before any detail — in plain terms: does the ti
 
 ## Step 4 — Style register: fixed base + one vibe line
 
-Think of it as 汤底 + 调味: Steps 1–3 (semantic reading, metaphor, composition) are the fixed soup base that never changes; the style is decided by **one colloquial vibe line** (气质说明) appended at the end. Instruction-following models (GPT-image, Gemini) understand plain-spoken vibes better than stacked design jargon — "女儿看了会喜欢 + 有花 + 有卡通熊" works.
+Think of it as 汤底 + 调味: Steps 1–3 (semantic reading, metaphor, composition) are the fixed soup base that never changes; the style is decided by **one colloquial vibe line** (the 可选情绪倾向 field) appended at the end. Instruction-following models (GPT-image, Gemini) understand plain-spoken vibes better than stacked design jargon — "女儿看了会喜欢 + 有花 + 有卡通熊" works.
 
-If the user gave a vibe line, honor it. If not, compose one with this fill-in formula and state it in the concept:
+If the user filled 可选情绪倾向, honor it verbatim. If not, compose one with this fill-in formula and state it in the concept:
 
 > 色彩基调 + 画面质感/材质 + 艺术风格/参考美学 + 情绪/目标人群/氛围
 > e.g. "色彩日系明亮，几何图形 + 像素感" / "夏日感，像马卡龙一样的糖果玻璃质感" / "黑金属背景，喜欢 F1 赛车的人会喜欢"

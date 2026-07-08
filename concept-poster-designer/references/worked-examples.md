@@ -6,7 +6,7 @@ Two complete runs of the skill, showing the quality bar. Read these when calibra
 
 ## Example 1 — 「孤独」 · art exhibition poster · GPT-image · 2:3 portrait
 
-**Input**: 核心文字: 孤独 · 语境: 艺术展海报 · 气质说明: 冷峻、克制、疏离 · 禁用: 眼泪、拥抱、心形 · 允许辅助文字: yes，需深化主题 · 模型: GPT-image
+**Input**: 核心文字: 孤独 · 可选补充语境: 艺术展海报 · 可选情绪倾向: 冷峻、克制、疏离 · 可选禁用元素: 眼泪、拥抱、心形 · 是否允许辅助文字: yes（关系说明: 深化孤独主题）· 可选目标生成模型: GPT-image
 
 **Step 2 trace** (this is the part that decides everything):
 
@@ -39,7 +39,7 @@ Size: `1024x1536`（GPT-image API `size` 参数）。GPT-image 无 negative prom
 
 ## Example 2 — 「EverOS」 · GitHub README banner · target model unknown · ~3:1 wide
 
-**Input**: 核心文字: EverOS · 语境: GitHub README banner · 气质说明: 现代、极简、科技感、黄色品牌强调色
+**Input**: 核心文字: EverOS · 可选补充语境: GitHub README banner · 可选情绪倾向: 现代、极简、科技感 · 可选品牌/场景: 品牌黄强调色
 
 **Step 0 triage — this input reroutes twice:**
 

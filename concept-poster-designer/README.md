@@ -22,14 +22,21 @@ Restart or start a new session so the skill metadata is discovered. The skill ca
 
 ```text
 Use $concept-poster-designer
-核心文字: 孤独
-语境: 艺术展海报
-气质说明: 冷峻、克制、疏离
-禁用: 眼泪、拥抱、心形
-目标生成模型: GPT-image
+
+## 用户输入内容:
+核心文字 / 单词 / 词组 / 字母: "好奇心和执行力"
+文字语言: 中英文结合
+可选补充语境: 海报，专辑封面，无人
+可选情绪倾向: 现代风格，线条主义
+可选禁用元素:
+是否允许辅助文字: yes
+辅助文字如允许，必须与主题的关系说明: 向外探索世界，向内落地结果
+可选尺寸/比例: 3:4
+可选目标生成模型: GPT-image
+可选品牌/场景:
 ```
 
-Only the core text is required — everything else is inferred. The full input contract, workflow, and output shape live in [SKILL.md](SKILL.md); two complete worked examples (孤独 exhibition poster, EverOS wide tech banner) live in [references/worked-examples.md](references/worked-examples.md).
+字段名固定，冒号后的内容按需修改；只有核心文字必填，其余留空则自动推断。可选情绪倾向就是一句口语化的「气质说明」，决定整张海报的风格（如 "色彩日系明亮，几何图形 + 像素感"）。 The full input contract, workflow, and output shape live in [SKILL.md](SKILL.md); two complete worked examples (孤独 exhibition poster, EverOS wide tech banner) live in [references/worked-examples.md](references/worked-examples.md).
 
 ## Credits
 
